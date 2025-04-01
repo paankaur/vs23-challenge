@@ -1,7 +1,12 @@
 import logo from "../assets/logo.jpg";
 import Button from "./UI/Button";
+import  CartContext  from "../store/CartContext";
+import { useContext } from "react";
 
 const Header = () => {
+  const { cart } = useContext(CartContext);
+  console.log(cart.length);
+
   return (
     <header id="main-header">
       <div id="title">
@@ -9,7 +14,7 @@ const Header = () => {
         <h1>React Food Order App</h1>
       </div>
       <nav>
-        <Button textOnly={true} >Cart (0)</Button>
+        <Button textOnly={true}>Cart ({cart.length})</Button>
       </nav>
     </header>
   );
