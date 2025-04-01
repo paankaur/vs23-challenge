@@ -3,11 +3,11 @@ import { useContext } from "react";
 import CartContext from "../store/CartContext";
 
 const MealItem = (props) => {
-    const {addItem} = useContext(CartContext);
-    const AddMealToCart = () => {
-        addItem(props.meal);
-        console.log("add to cart clicked: ",props.meal);
-    }
+  const { dispatch } = useContext(CartContext);
+  const AddMealToCart = () => {
+    dispatch({ type: "ADD_ITEM", item: props.meal });
+    console.log("add to cart clicked: ", props.meal);
+  };
 
   return (
     <li className="meal-item">
@@ -22,7 +22,9 @@ const MealItem = (props) => {
           <p className="meal-item-description">{props.meal.description}</p>
         </div>
         <p className="meal-item-actions">
-          <Button onClick={AddMealToCart} textOnly={false}>Add to Cart</Button>
+          <Button onClick={AddMealToCart} textOnly={false}>
+            Add to Cart
+          </Button>
         </p>
       </article>
     </li>
