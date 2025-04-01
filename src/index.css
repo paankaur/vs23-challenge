@@ -219,12 +219,13 @@ h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   padding: 1rem;
   width: 80%;
+ /* min-height: 400px;   omalooming */
   max-width: 40rem;
   animation: fade-slide-up 0.3s ease-out forwards;
 }
 
 .modal::backdrop {
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0, 0, 0, 0.515);
 }
 
 @keyframes fade-slide-up {
