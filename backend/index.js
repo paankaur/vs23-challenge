@@ -21,6 +21,7 @@ app.get("/meals", async (req, res) => {
   const mealsData = JSON.parse(fileContent);
   res.json(JSON.parse(fileContent));
   //res.status(200).json({ meals: mealsData });
+  //console.log(fileContent);
 });
 
 app.use((req, res) => {
